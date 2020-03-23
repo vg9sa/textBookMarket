@@ -1,0 +1,100 @@
+<html>
+    <link rel="stylesheet" href="style.css" /> 
+    <body>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+              <a class="navbar-brand" href="index.html">MarketPlace For Students</a>            
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>       
+              <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: white;">Sign up</a>
+                  </li>                                       
+                  <li class="nav-item"> 
+                    <a class="nav-link" href="#" style="color: white;">Log in</a>
+                  </li>          
+                </ul>
+              </div>  
+            </nav>
+          </header>     
+          <ul id="texts" style="text-align: center;"> 
+              <ul>
+              </ul>
+          </ul>
+    </body>
+
+
+    <script>
+        //creating dummy json data for the browse feature.
+        //all the books in the database should be visible here, so for now I created fake json data to emulate how it would be
+        var textBooks;
+        textBooks = [
+        {
+            "title" : "Calculus",
+            "Author" : "Kenneth Phillips",
+            "ISBN" : "9780132276538",
+            "Quality" : "New",
+            "Price" : "$100.00",
+            "id" : "bookStyle"
+        },
+        {
+            "title" : "Physics C",
+            "Author" : "Douglas Giancoli",
+            "ISBN" : "9780132273596",
+            "Quality" : "old",
+            "Price" : "$150.00",
+            "id" : "bookStyle"
+        },
+        {
+            "title" : "Liner Algebra",
+            "Author" : "David Lay",
+            "ISBN" : "8695132273596",
+            "Quality" : "new",
+            "Price" : "$50.00",
+            "id" : "bookStyle"
+        }
+        ];
+
+        //using an anonymous function, since this method is really only called once
+        //the fucnction loops through each object from above and then dynamically creates a tag and places it in the html
+        //the dom is being updated in these cases
+        
+        var makeBooks = function()
+        {
+            for (var i = 0; i < textBooks.length; i++) 
+        {
+                var object = textBooks[i];
+                let ul1 = document.createElement('ul');
+                let title = document.createElement('p');
+                title.id = "titleId";
+                let author = document.createElement('p');
+                author.id = "authorId";
+                let isbn = document.createElement('p');
+                isbn.id = "isbnId";
+                let quality = document.createElement('p');
+                quality.id = "qualityId";
+                let price = document.createElement('p');
+                price.id = "priceID";
+                title.innerHTML = object['title'];
+                author.innerHTML = "Author: "  + object['Author'];
+                isbn.innerHTML = "ISBN: "+ object['ISBN'];
+                quality.innerHTML = "Quality: " + object['Quality'];
+                price.innerHTML = "Price: " +  object['Price'];          
+                ul1.appendChild(title);
+                ul1.appendChild(author);
+                ul1.appendChild(isbn);
+                ul1.appendChild(quality);
+                ul1.appendChild(price);
+                ul1.id = object['id'];
+                let grandUl = document.getElementById("texts").appendChild(ul1);
+    }
+        }
+        makeBooks()
+        
+
+    </script>
+
+</html>

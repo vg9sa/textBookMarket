@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="your name">
+  <meta name="description" content="include some description about your page">
+  
+  <title>Textbook MarketPlace</title>
+  
+  <!-- CSS bootstrap from class template -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <!-- external custom CSS sheet -->
+  <link rel="stylesheet" href="style.css" /> 
+
+  <style>
+    /* the css for the search box */
+    .search 
+    {
+      width: 360px;
+      box-sizing: border-box;
+      font-size: 16px;
+      background-color: white;
+      background-position: 10px 10px; 
+      border-radius: 1em;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      position: relative;
+    }
+    /* Css for the search and browse buttons.*/
+    .browseBtn{
+      width: 140px;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px 25px;
+      display: inline-block;
+      position: relative;
+      background-color: grey;
+      color: white;
+      margin-right: 60px;
+    }
+
+    .searchBtn{
+      width: 140px;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px 25px;
+      display: inline-block;
+      position: relative;
+      background-color: green;
+      color: white;
+    }
+
+    .btnDiv {
+      position: relative;
+      margin-top: 10px;
+    }
+
+    #hiddenInfo{
+      position: relative;
+      text-align: right;
+      margin-left: 200px;
+      visibility: hidden;
+    }
+
+    /* Css that will change the layout. when you hover the color changes*/
+    #infoBtn:hover
+    {
+      background-color:black;
+    }  
+  </style>
+       
+</head>
+
+<body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">MarketPlace For Students</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" onClick="location.href='signUp.html'" style="color: white;">Sign up</a>
+            </li>                                       
+            <li class="nav-item"> 
+              <a class="nav-link" href="#" style="color: white;">Log in</a>
+            </li>          
+          </ul>
+        </div>  
+      </nav>
+    </header>      
+  
+    <!-- create container for the page content -->
+    <!-- <div class="jumbotron"> -->
+    <div class="header container-fluid">
+      <div class="overlay">
+        <div class="description">
+          <h1 style="color: white;">Welcome to the</h1>
+          <br/>
+          <h1 style="color: white;"> Textbook MarketPlace</h1>
+          <p>A fast and easy way for studnts to buy and sell textbooks</p>
+          <p>
+            <form>
+              <input type="text" class="search" placeholder="Enter a book title or an ISBN..">
+            </form>
+            <div class="btnDiv">
+              <button class="browseBtn"  onClick="location.href='browse.html'"> Browse </button> <!-- when browse button is pressed go to the browse html file-->
+              <button class="searchBtn" onClick= "validate()"> Search </button>
+            </div>
+            </p>
+          </p>        
+        </div>      
+      </div>
+    </div>  
+  
+    <div class="container highlight">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <h3>MarketPlace</h3>
+          <p>This is a service for students that hopes to help
+            people find tetbooks for class at a discounted rate.
+          </p>
+          <button id="infoBtn" class="searchBtn"> Learn More! </button>
+        </div>
+        <div id="hiddenInfo" class="col-lg-4 col-md-4 col-sm-12">
+          <div >
+          <h3>Additional Info</h3>
+          <p> A person can search a book based on a title or isbn, or they can browse to see
+            all the books available in our database. Start finding books now!
+          </p>
+          </div>
+        </div>       
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+            <p>Please visit Olsson Hall On Tuesdays </p>
+          </div>
+          <div class="col-md-4">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <p>1819 Jefferson Park Ave, Charlottesville, VA 22011  <br/>
+               vg9sa@uva.edu
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center">&copy; 2020 Copyright: webPl.uva</div>
+    </footer>
+    
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- for local -->
+  <!-- <script src="jquery.min.js"></script> -->
+  <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+  
+  <script>
+  
+  // document ready event is fired when DOM has been loaded 
+  $(document).ready(function() {
+	 // do DOM manipulation
+     $('.header').height($(window).height()/2.5);     // set header's height
+   })
+
+   //using the es6 arrow syntax
+   //when the learn more button is pressed this function is called and thea new element then becomes visible
+   //the showInfo function is called by the event listener that waits for the button to be pressed
+
+   showInfo = () => {
+     document.getElementById("hiddenInfo").style.visibility = "visible";
+   }
+   document.getElementById("infoBtn").addEventListener("click",showInfo);
+
+   //this function will check if a user has typed anything in the search box and give an alert if they have not
+   //otherwise it will then check to see the book is there and proceed to go to the page to display the result
+
+   function validate() 
+   {
+     let searchField = document.getElementsByClassName("search")[0].value;
+     if(searchField.length > 0 && searchField === "Calculus")
+     {
+      window.location.href = "search.html";
+      
+     }
+     else if(searchField.length == 0)
+     {
+      alert("Please enter a valid ISBN or textbook name to search!");
+     }
+     else{
+      alert("What you are searching for is not valid");
+     }
+   }
+  
+  </script>
+</body>
+</html>

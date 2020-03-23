@@ -1,0 +1,105 @@
+<html>
+    <body>
+        <body>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <header>
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                  <a class="navbar-brand" href="index.html">MarketPlace For Students</a>
+                  
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+                
+                  </div>  
+                </nav>
+              </header>
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <style>
+    #submitBtn:hover
+    {
+      background-color:black;
+    }       
+  </style>    
+</head>
+
+<!-- Creating a form babsed on the example from class to help outline how the sign up page will look like -->
+<body>
+  <div class="container">
+    <h2>MarketPlace Sign Up</h2>
+    
+    <form action="" name="RegisterForm" method="post" >
+      <div class="form-group">
+        <label for="age">Username: </label>
+        <input type="text" id ="username" class="form-control" placeholder="Enter your Username (up to 8 characters)" />
+      </div>
+      <div class="form-group">
+        <label for="major">Email: </label>
+        <input type="text" id="email" class="form-control" placeholder="Enter your school email" /> 
+      </div> 
+      <div class="form-group">
+        <label for="sid">Password: </label>
+        <input type="text" id="password" class="form-control" placeholder="Enter your Password (max of 8 characters)" />
+      </div>
+      <div class="form-group">
+        <label for="sid">Re-Password: </label>
+        <input type="text" id="password2" class="form-control" />
+      </div>
+      <input id= "submitBtn" onclick="return checkRegistration()" type="submit" value="Create Your Account" class="btn btn-secondary" />       
+    </form> 
+  </div>
+
+  <script>
+     //the function does some checks to see if the inputs the users are entering follow the rules
+     //I am validating their input before giving a message that says they have an account
+     //this is a baseline of how the signup page will be like
+     
+    function checkRegistration()
+    {   
+       
+       var userName = document.getElementById("username");
+       var email = document.getElementById("email");
+       var password = document.getElementById("password");
+       var password2 = document.getElementById("password2");
+       
+       if(userName.length === 0 || email.length === 0 || password.length === 0)
+       {
+           alert("One of the fields below was left empty.");
+           return false;
+       }
+
+       if(userName.length > 8)
+       {
+        alert("Usernme is exceding the 8 character limit");
+        return false;
+       }
+
+       if(password.length > 8)
+       {
+        alert ("The length of the password is too large");
+        return false;
+       }
+
+       if(!(email.value.includes('.')) ||  !(email.value.includes('.')))
+       {
+           alert("The email entered is not vaild.");
+           return false;
+       }
+
+       if(password.value != password2.value)
+       {
+           alert("The passwords do not match.");
+           return false;
+       }
+
+
+       alert("congratulations on creating the new profile!");
+       // Format looks OK, form can be submitted.
+       return true;
+    }
+    </script>
+   
+    </body>
+</html>
